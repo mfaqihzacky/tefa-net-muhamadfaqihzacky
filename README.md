@@ -46,27 +46,81 @@ TodoListWebApp/
 │   ├── README.md                 # File Readme
 ```
 
-## 🏗️ Instalasi dan Penggunaan
+## 🏗️ Set Up To Test API
 
-### 1️⃣ Clone Repository
-```bash
-git clone https://github.com/username/tefa-net-namaAnda.git
-cd tefa-net-namaAnda
+### 1. Clone Repository
+```sh
+git clone https://github.com/yourusername/tefa-net-yourname.git
+cd tefa-net-yourname
 ```
 
-### 2️⃣ Setup Database
-1. Pastikan SQL Server sudah berjalan.
-2. Konfigurasikan **appsettings.json** dengan connection string database Anda.
+### 2. Configure Database Connection
+Edit file **appsettings.json** dan sesuaikan connection string dengan konfigurasi SQL Server Anda.
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=YOUR_SERVER;Database=TodoListDB;Trusted_Connection=True;"
+  }
+}
+```
 
-### 3️⃣ Jalankan Migrasi Database
-```bash
+### 3. Apply Database Migrations
+Jalankan perintah berikut untuk membuat dan memperbarui database:
+```sh
 dotnet ef database update
 ```
 
-### 4️⃣ Jalankan Aplikasi
-```bash
-dotnet run
+### 4. Run the Application in Visual Studio 2022
+1. Buka **Visual Studio 2022**.
+2. Pilih **Open a project or solution** dan buka folder proyek `TodoListAPI`.
+3. Pastikan `TodoListAPI` diatur sebagai **Startup Project**.
+4. Tekan `Ctrl + F5` untuk menjalankan aplikasi tanpa debugging.
+5. Aplikasi akan berjalan di `https://localhost:4000`.
+
+### 5. Test API Endpoints
+Gunakan **Postman** untuk menguji API:
+
+#### Get All Clients
+```sh
+GET https://localhost:4000/api/clients
 ```
+
+#### Get Client by ID
+```sh
+GET https://localhost:4000/api/clients/{id}
+```
+
+#### Create New Client
+```sh
+POST https://localhost:4000/api/clients
+Content-Type: application/json
+
+{
+  "title": "New Task",
+  "description": "This is a test task",
+  "createdAt": "07/03/2025"
+}
+```
+
+#### Update Client
+```sh
+PUT https://localhost:4000/api/clients/{id}
+Content-Type: application/json
+
+{
+  "title": "Updated Task",
+  "description": "Updated description",
+  "createdAt": "07/03/2025"
+}
+```
+
+#### Delete Client
+```sh
+DELETE https://localhost:4000/api/clients/{id}
+```
+
+---
+
 Akses API di `https://localhost:4000/api/clients`.
 
 ## 🔧 Endpoint API
