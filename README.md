@@ -43,7 +43,7 @@ TodoListWebApp/
 │   ├── appsettings.json          # Konfigurasi aplikasi
 │   ├── Program.cs                # Entry point aplikasi
 │   ├── TodoListAPI.http          # File testing API
-│   ├── README.md                 # File Readme
+│──README.md                      # File Readme
 ```
 
 ## 🏗️ Set Up To Test API
