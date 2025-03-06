@@ -10,8 +10,6 @@ namespace TodoListAPI.Models
 
         public string? Description { get; set; } = "";
 
-
-        //ini yang diubah
         [Required(ErrorMessage = "Date is required")]
         public string CreatedAt { get; set; } = "";
 

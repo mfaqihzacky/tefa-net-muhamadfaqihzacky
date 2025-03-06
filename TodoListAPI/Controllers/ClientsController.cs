@@ -39,25 +39,21 @@ namespace TodoListAPI.Controllers
         {
             try
             {
-                //original
                 var client = new Client
                 {
                     Title = clientDto.Title,
                     Description = clientDto.Description ?? "",
                     CreatedAt = clientDto.GetCreatedAtDateTime()
-                    //CreatedAt = DateTime.Now
                 };
 
                 context.Clients.Add(client);
                 context.SaveChanges();
                 return Ok(client);
             }
-            //original
             catch (FormatException)
             {
                 return BadRequest("Invalid date format. Please use dd/MM/yyyy.");
             }
-            //ini juga dr try
 
         }
 

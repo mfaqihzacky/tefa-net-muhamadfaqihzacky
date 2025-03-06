@@ -3,8 +3,6 @@ using TodoListAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -14,7 +12,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 app.UseCors(policy => policy
     .AllowAnyOrigin()
     .AllowAnyMethod()
@@ -24,8 +21,15 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
+app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapFallbackToFile("index.html");
+});
 
 app.Run();
