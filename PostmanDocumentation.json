@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "02b5f7bd-49f1-4a71-b330-eece8d144278",
+		"name": "📌 Dokumentasi API To-Do List",
+		"description": "### 📖 Deskripsi API\n\nTodoListAPI ini dibuat untuk mengelola daftar pekerjaan (**To-Do List**) dengan fitur **CRUD (Create, Read, Update, Delete)**. Setiap tugas yang ditambahkan akan memiliki **judul (title)**, **deskripsi (description)**, dan **tanggal dibuat (createdAt)** yang bisa ditentukan oleh pengguna dalam format **dd/MM/yyyy**. API ini menggunakan **.NET** sebagai backend dan **SQL Server** sebagai database.\n\n---",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39991888"
+	},
+	"item": [
+		{
+			"name": "GET To-Do List",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:4000/api/clients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clients"
+					]
+				},
+				"description": "### **📋 1. Melihat Daftar To-Do List**\n\nMengambil semua daftar tugas yang telah disimpan di database.\n\n**📌 Endpoint:**\n\n``` http\nGET https://localhost:4000/api/clients\n\n ```\n\n**📌 Contoh Response:**\n\n``` json\n[\n    {\n        \"id\": 1,\n        \"title\": \"Belajar .NET\",\n        \"description\": \"Membuat API dengan format tanggal custom\",\n        \"createdAt\": \"06/03/2025\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Memasak\",\n        \"description\": \"Memasak nasi goreng\",\n        \"createdAt\": \"07/03/2025\"\n    }\n]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Success GET To-Do List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:4000/api/clients",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "GET To-Do List by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:4000/api/clients/{id}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clients",
+						"{id}"
+					]
+				},
+				"description": "### **🔍 2. Melihat Detail Tugas Tertentu**\n\nMengambil informasi dari satu tugas tertentu berdasarkan **ID tugas**.\n\n**📌 Endpoint:**\n\n``` http\nGET https://localhost:4000/api/clients/{id}\n\n ```\n\n**📌 Contoh Response (Sukses):**\n\n``` json\n{\n    \"id\": 1,\n    \"title\": \"Belajar .NET\",\n    \"description\": \"Membuat API dengan format tanggal custom\",\n    \"createdAt\": \"06/03/2025\"\n}\n\n ```\n\n**📌 Contoh Response (Gagal - Not Found):**\n\n``` json\n{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.5\",\n    \"title\": \"Not Found\",\n    \"status\": 404,\n    \"traceId\": \"00-80416600ab351c5d24fb62686c933283-b380db67f89d8d06-00\"\n}\n\n ```\n\n---"
+			},
+			"response": [
+				{
+					"name": "Success GET To-Do List by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:4000/api/clients/{id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"clients",
+								"{id}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Failed GET To-Do List by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:4000/api/clients/{id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"clients",
+								"{id}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "PUT To-Do List",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"makan\",\r\n    \"description\": \"Membuat API dengan format tanggal custom\",\r\n    \"createdAt\": \"06/03/2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:4000/api/clients/{id}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clients",
+						"{id}"
+					]
+				},
+				"description": "### **✏️ 3. Memperbarui Tugas**\n\nMengedit tugas berdasarkan **ID tugas**.\n\n**📌 Endpoint:**\n\n``` http\nPUT https://localhost:4000/api/clients/{id}\n\n ```\n\n**📌 Contoh Body (JSON):**\n\n``` json\n{\n    \"title\": \"Olahraga Sore\",\n    \"description\": \"Lari 5 km di taman\",\n    \"createdAt\": \"09/03/2025\"\n}\n\n ```\n\n**📌 Contoh Response (Sukses - 200 OK):**\n\n``` json\n{\n    \"id\": 3,\n    \"title\": \"Olahraga Sore\",\n    \"description\": \"Lari 5 km di taman\",\n    \"createdAt\": \"09/03/2025\"\n}\n\n ```\n\n**📌 Contoh Response (Gagal - ID Tidak Ditemukan):**\n\n``` json\n{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.5\",\n    \"title\": \"Not Found\",\n    \"status\": 404,\n    \"traceId\": \"00-ba2c0a451b5173fd8ce1d9ddfe7614d8-b069a31d6da1dad5-00\"\n}\n\n ```\n\n---\n\n⬇️BODY PUT:"
+			},
+			"response": [
+				{
+					"name": "Success PUT To-Do List",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"makan\",\r\n    \"description\": \"Membuat API dengan format tanggal custom\",\r\n    \"createdAt\": \"06/03/2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:4000/api/clients/{id}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"clients",
+								"{id}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "POST To-Do List",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Belajar forntend\",\r\n    \"description\": \"fe\",\r\n    \"createdAt\": \"06/02/2024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:4000/api/clients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clients"
+					]
+				},
+				"description": "### **📝 4. Menambahkan Tugas Baru**\n\nMenambahkan tugas baru dengan judul, deskripsi, dan tanggal dibuat.\n\n**📌 Endpoint:**\n\n``` http\nPOST https://localhost:4000/api/clients/{id}\n\n ```\n\n**📌 Contoh Body (JSON):**\n\n``` json\n{\n    \"title\": \"Olahraga Pagi\",\n    \"description\": \"Jogging selama 30 menit\",\n    \"createdAt\": \"08/03/2025\"\n}\n\n ```\n\n**📌 Contoh Response (Sukses - 201 Created):**\n\n``` json\n{\n    \"id\": 3,\n    \"title\": \"Olahraga Pagi\",\n    \"description\": \"Jogging selama 30 menit\",\n    \"createdAt\": \"08/03/2025\"\n}\n\n ```\n\n**📌 Contoh Response (Gagal - Tidak Ada Title & Format Tanggal Salah):**\n\n``` json\n{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"errors\": {\n        \"Title\": [\n            \"Title is required\"\n        ],\n        \"CreatedAt\": [\n            \"Date is required\"\n        ]\n    },\n    \"traceId\": \"00-6189447e8035f25ddfc593b6a3af0a2d-5b87ff0393ad58ef-00\"\n}\n\n ```\n\n---"
+			},
+			"response": [
+				{
+					"name": "Success POST To-Do List",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Belajar forntend\",\r\n    \"description\": \"fe\",\r\n    \"createdAt\": \"06/02/2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:4000/api/clients",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "DELETE To-Do-List",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:4000/api/clients/{id}",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"clients",
+						"{id}"
+					]
+				},
+				"description": "### **🗑️ 5. Menghapus Tugas**\n\nMenghapus tugas berdasarkan **ID tugas**.\n\n**📌 Endpoint:**\n\n``` http\nDELETE https://localhost:4000/api/clients/{id}\n\n ```\n\n**📌 Contoh Response (Sukses - 200 Ok):**\n\n``` http\n-\n\n ```\n\n**📌 Contoh Response (Gagal - ID Tidak Ditemukan):**\n\n``` json\n{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.5\",\n    \"title\": \"Not Found\",\n    \"status\": 404,\n    \"traceId\": \"00-196cc8de58bb8c940cc8c67928975784-14ed3df8a675e919-00\"\n}\n\n ```\n\n---"
+			},
+			"response": [
+				{
+					"name": "Success DELETE To-Do-List",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:4000/api/clients/46",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"clients",
+								"46"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 07 Mar 2025 03:55:41 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
