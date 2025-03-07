@@ -53,8 +53,8 @@ Akses API di `https://localhost:4000/api/clients`.
 
 ### 1. Clone Repository
 ```sh
-git clone https://github.com/yourusername/tefa-net-yourname.git
-cd tefa-net-yourname
+git clone https://github.com/yourusername/tefa-net-muhamadfaqihzacky.git
+cd tefa-net-muhamadfaqihzacky
 ```
 
 ### 2. Configure Database Connection
