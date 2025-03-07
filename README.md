@@ -45,18 +45,10 @@ TodoListWebApp/
 │   ├── TodoListAPI.http          # File testing API
 │──README.md                      # File Readme
 ```
-
-## 📜 Dokumentasi Postman
-Dokumentasi API dapat diakses dengan menggunakan file Postman berikut:
-
-1. Buka **Postman**.
-2. Klik **Import**.
-3. Pilih file `PostmanDocumentation.json` dari repository.
-4. Jalankan dan uji endpoint API.
-
 ---
 
 ## 🏗️ Set Up To Test API
+Akses API di `https://localhost:4000/api/clients`.
 
 ### 1. Clone Repository
 ```sh
@@ -131,7 +123,15 @@ DELETE https://localhost:4000/api/clients/{id}
 
 ---
 
-Akses API di `https://localhost:4000/api/clients`.
+## 📜 Dokumentasi Postman
+Dokumentasi API dapat diakses dengan menggunakan file Postman berikut:
+
+1. Buka **Postman**.
+2. Klik **Import**.
+3. Pilih file `PostmanDocumentation.json` dari repository.
+4. Jalankan dan uji endpoint API.
+
+---
 
 ## 🔧 Endpoint API
 | Method | Endpoint         | Deskripsi |
